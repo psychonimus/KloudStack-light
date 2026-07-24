@@ -8,7 +8,7 @@
 
 .ft-wrapper {
   margin: 0 auto;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
 }
 
 /* ─── Tab Bar ─────────────────────────────────────────────────── */
@@ -39,6 +39,8 @@
   transition: color 0.25s ease;
   white-space: nowrap;
   z-index: 1;
+  margin-right: 10px;
+  background-color: #c294601c;
 }
 
 .ft-tab--active {

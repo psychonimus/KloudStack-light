@@ -84,6 +84,20 @@ export default function FeatureTabs() {
 
   return (
     <section className="ft-section">
+      <div className="container mb-4" data-reveal-group>
+        <div className="os-light-header-left">
+            <p className="os-light-eyebrow gsap-reveal-eyebrow">Our Productline</p>
+            <h2 className="os-light-title gsap-reveal-title">
+              Cyber risk solutions for every stage of your{' '}
+              <span className="os-light-title-accent">security journey</span>
+            </h2>
+            {/* <p className="os-light-subtitle gsap-reveal-text">
+              Our skilled solutions, from strategy to execution, are made to boost performance, spur growth, quantifiable value.
+            </p> */}
+          </div>
+          
+      </div>
+
       <div className="container ft-wrapper">
         {/* ── Tab Bar ── */}
         <div className="ft-tabbar" role="tablist">
