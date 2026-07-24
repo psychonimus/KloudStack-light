@@ -5,34 +5,34 @@ import "./FeatureTabs.css";
 const TABS = [
   {
     id: "smart-response",
-    label: "Smart Response Engine",
-    heading: "Intelligent Response Automation",
+    label: "Pulse",
+    heading: "AI-Powered Continuous Monitoring",
     description:
-      "Leverage AI-powered response engines to handle enterprise queries with precision. Our Smart Response Engine learns from your data to deliver contextual, accurate answers — reducing response times by up to 80% while boosting team productivity.",
+      "Pulse provides ongoing detection, anomaly tracking, and intelligent alerting.",
     img: "/images/tab1.png",
   },
   {
     id: "automation",
-    label: "Automation",
-    heading: "Intelligent Task Automation",
+    label: "Fortress",
+    heading: "Enterprise Cyber Risk Platform",
     description:
-      "Automate repetitive processes and streamline customer interactions with tailored triggers, logic-driven flows, and an intuitive builder that boosts efficiency. Integrate with 200+ enterprise tools with zero-code workflows.",
+      "Fortress quantifies cyber threats, predicts potential attacks, and provides clear financial impact analysis, while supporting alignment with key cybersecurity and regulatory frameworks including SEBI CSF and DPDPA.",
     img: "/images/tab2.png",
   },
   {
     id: "security",
-    label: "Cybersecurity & ZTNA",
-    heading: "Zero Trust Security Architecture",
+    label: "Compass",
+    heading: "Cyber Risk Insights for Insurers & Brokers",
     description:
-      "Deploy pervasive end-to-end security with our Zero Trust Network Access framework. Real-time threat detection, automated incident response, and global compliance management protect your enterprise at every layer.",
+      "Compass transforms technical data into underwriting-ready intelligence.",
     img: "/images/tab3.png",
   },
   {
     id: "cloud",
-    label: "Cloud Infrastructure",
-    heading: "Hybrid Cloud Management",
+    label: "Accord",
+    heading: "AI Governance, Compliance & Insurability",
     description:
-      "Seamlessly manage multi-cloud and hybrid environments from a single control plane. Optimize resource utilization, automate deployments, and achieve 99.99% uptime with intelligent infrastructure orchestration.",
+      "Accord simplifies responsible AI deployment and regulatory alignment.",
     img: "/images/tab4.png",
   },
 ];
@@ -56,20 +56,17 @@ const contentVariants = {
 
 const imageVariants = {
   enter: {
-    scale: 0.94,
+    scale: 0.97,
     opacity: 0,
-    y: 20,
   },
   center: {
     scale: 1,
     opacity: 1,
-    y: 0,
     transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.05 },
   },
   exit: {
-    scale: 0.96,
+    scale: 0.97,
     opacity: 0,
-    y: -10,
     transition: { duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 };
@@ -167,8 +164,6 @@ export default function FeatureTabs() {
                   alt={activeTab.heading}
                   className="ft-img"
                 />
-                {/* Decorative glow */}
-                <div className="ft-img-glow" />
               </motion.div>
             </AnimatePresence>
           </div>

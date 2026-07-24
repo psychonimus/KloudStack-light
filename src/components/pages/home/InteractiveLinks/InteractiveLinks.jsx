@@ -93,7 +93,7 @@ function HoverLink({ heading, imgSrc, subheading, href }) {
       </div>
 
       {/* Floating image */}
-      <motion.img
+      {/* <motion.img
         style={{ top, left, translateX: "50%", translateY: "-50%" }}
         variants={{
           initial: { scale: 0, rotate: "-12.5deg" },
@@ -103,7 +103,7 @@ function HoverLink({ heading, imgSrc, subheading, href }) {
         src={imgSrc}
         alt={`Image representing ${heading}`}
         className="il-img"
-      />
+      /> */}
 
       {/* Arrow icon */}
       <div className="il-arrow-wrapper">

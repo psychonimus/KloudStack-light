@@ -41,7 +41,7 @@
 
 .il-heading {
   display: block;
-  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: #aaa;

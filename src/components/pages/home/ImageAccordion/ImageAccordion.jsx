@@ -74,7 +74,7 @@ const ImageAccordion = () => {
               {/* Background Image */}
               <motion.div
                 className="ia-img-wrap"
-                animate={{ scale: isActive ? 1.06 : 1 }}
+                animate={{ scale: isActive ? 1 : 1 }}
                 transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <img src={item.img} alt={item.title} className="ia-img" />
