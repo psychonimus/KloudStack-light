@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS LIGHT — Minimal Editorial Style
+   ══════════════════════════════════════════ */
+
+.tv-light-section {
+  width: 100%;
+  position: relative;
+  padding: 100px 0 100px;
+  overflow: hidden;
+  background: #f7f4ef;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  color: #071B34;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.tv-light-section--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Inner ── */
+.tv-light-inner {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Stage Wrapper with Side Navigation ── */
+.tv-light-stage-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+}
+
+/* ── Stage (clipping & slider) ── */
+.tv-light-stage {
+  flex: 1;
+  position: relative;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── Slide Transitions ── */
+.tv-light-slide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  will-change: transform, opacity;
+}
+
+/* Enter Next (from right) */
+.tv-light-slide--enter-next {
+  animation: tv-light-enter-right 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Enter Prev (from left) */
+.tv-light-slide--enter-prev {
+  animation: tv-light-enter-left 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Exit Left */
+.tv-light-slide--exit-left {
+  animation: tv-light-exit-left 0.48s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Exit Right */
+.tv-light-slide--exit-right {
+  animation: tv-light-exit-right 0.48s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes tv-light-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(48px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes tv-light-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-48px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes tv-light-exit-left {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-48px) scale(0.98);
+  }
+}
+
+@keyframes tv-light-exit-right {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(48px) scale(0.98);
+  }
+}
+
+/* ── Navigation Buttons ── */
+.tv-light-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(194, 149, 96, 0.4);
+  background: #ffffff;
+  color: #C29560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  z-index: 10;
+}
+
+.tv-light-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tv-light-nav-btn:hover {
+  background: #C29560;
+  color: #ffffff;
+  border-color: #C29560;
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(194, 149, 96, 0.25);
+}
+
+.tv-light-nav-btn:active {
+  transform: scale(0.94);
+}
+
+/* ── Top Eyebrow ── */
+.tv-light-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C29560;
+  margin: 0 0 20px;
+}
+
+.tv-light-asterisk {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #C29560;
+}
+
+/* ── Main Quote Headline ── */
+.tv-light-quote {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.6rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  color: #071B34;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Author Block ── */
+.tv-light-author-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tv-light-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 2px solid #ffffff;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tv-light-author-block:hover .tv-light-avatar {
+  transform: scale(1.08);
+}
+
+.tv-light-author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.tv-light-author-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #071B34;
+  margin: 0;
+}
+
+.tv-light-author-title {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #777777;
+  margin: 0;
+}
+
+/* ── Controls Row (Dots + Mobile Arrows) ── */
+.tv-light-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.tv-light-dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tv-light-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(194, 149, 96, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.tv-light-dot--active {
+  background: #C29560;
+  transform: scale(1.2);
+  width: 24px;
+  border-radius: 100px;
+}
+
+.tv-light-dot:hover:not(.tv-light-dot--active) {
+  background: rgba(194, 149, 96, 0.65);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tv-light-section {
+    padding: 70px 0 70px;
+  }
+
+  .tv-light-quote {
+    font-size: 1.35rem;
+    line-height: 1.38;
+  }
+
+  .tv-light-stage-wrap {
+    gap: 12px;
+  }
+
+  .tv-light-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tv-light-nav-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tv-light-controls {
+    margin-top: 36px;
+  }
+}

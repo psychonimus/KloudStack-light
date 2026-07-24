@@ -1,0 +1,212 @@
+/* ──────────────────────────────────────────
+   ImageAccordion — Section wrapper
+────────────────────────────────────────── */
+.ia-section {
+  width: 100%;
+  padding: 64px 40px;
+  box-sizing: border-box;
+  background: #f5f5f5;
+}
+
+/* ──────────────────────────────────────────
+   Flex strip
+────────────────────────────────────────── */
+.ia-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ──────────────────────────────────────────
+   Individual panel
+────────────────────────────────────────── */
+.ia-panel {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  /* flex transitions handled by framer-motion */
+}
+
+/* ──────────────────────────────────────────
+   Image
+────────────────────────────────────────── */
+.ia-img-wrap {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.ia-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ──────────────────────────────────────────
+   Gradient overlay
+────────────────────────────────────────── */
+.ia-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.18) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ──────────────────────────────────────────
+   Label container
+────────────────────────────────────────── */
+.ia-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 22px 20px;
+  pointer-events: none;
+}
+
+/* Vertical rotated label — shown when panel is collapsed */
+.ia-label-vertical {
+  position: absolute;
+  bottom: 28px;
+  left:50%;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: center center;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  transition: opacity 0.35s ease;
+}
+
+/* Bottom horizontal label — shown when panel is expanded */
+.ia-label-bottom {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  pointer-events: none;
+}
+
+.ia-label-title {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.ia-label-subtitle {
+  margin: 4px 0 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* ──────────────────────────────────────────
+   Corner number badge
+────────────────────────────────────────── */
+.ia-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  transition: opacity 0.35s ease;
+}
+
+/* ──────────────────────────────────────────
+   Active / Idle state visual cues
+────────────────────────────────────────── */
+.ia-panel--active .ia-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.08) 55%,
+    transparent 100%
+  );
+}
+
+.ia-panel--idle .ia-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  /* subtle desaturate on idle */
+  backdrop-filter: saturate(0.7);
+}
+
+.ia-panel--idle .ia-img {
+  filter: brightness(0.75) saturate(0.6);
+  transition: filter 0.5s ease;
+}
+
+.ia-panel--active .ia-img {
+  filter: brightness(1.05) saturate(1.1);
+  transition: filter 0.5s ease;
+}
+
+/* ──────────────────────────────────────────
+   Responsive
+────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ia-section {
+    padding: 40px 16px;
+  }
+
+  .ia-wrapper {
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+  }
+
+  .ia-panel {
+    height: 180px;
+    flex: unset !important;
+    border-radius: 14px;
+  }
+
+  .ia-panel--active {
+    height: 340px !important;
+  }
+
+  .ia-label-vertical {
+    display: none;
+  }
+
+  .ia-label-bottom {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ══════════════════════════════════════════
+   CLIENT LOGOS — Infinite Carousel Section
+   ══════════════════════════════════════════ */
+
+.cl-section {
+  width: 100%;
+  background: linear-gradient(135deg, #C29560 0%, #B0824B 100%);
+  padding: 22px 0 22px;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── "TRUSTED BY" Heading ── */
+.cl-heading {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  margin: 0 0 44px;
+  position: relative;
+  z-index: 1;
+}
+
+.cl-heading-accent {
+  color: #d4a04a;
+}
+
+/* ── Carousel wrapper ── */
+.cl-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+/* ── Edge fade masks ── */
+.cl-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cl-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #000000 0%, transparent 100%);
+}
+
+.cl-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #000000 0%, transparent 100%);
+}
+
+/* ── Scrolling track ── */
+.cl-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 0;
+  animation: cl-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.cl-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes cl-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Individual logo item ── */
+.cl-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 52px;
+  height: 72px;
+  opacity: 0.65;
+  filter: brightness(1) grayscale(0.1);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  cursor: default;
+  position: relative;
+}
+
+/* Subtle divider between items */
+.cl-item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cl-item:last-child::after {
+  display: none;
+}
+
+.cl-item:hover {
+  opacity: 1;
+  filter: brightness(1.15) drop-shadow(0 0 10px rgba(212, 160, 74, 0.35));
+  transform: scale(1.06);
+}
+
+.section-heading{
+  width: fit-content;
+    text-align: center;
+    font-size: clamp(1.5rem, 2vw, 4rem);
+    font-family: Plus Jakarta Sans, "DM Sans";
+    font-weight: 800;
+    /* letter-spacing: -0.02em; */
+    color: #ffffff;
+    /* text-transform: uppercase; */
+    background: linear-gradient(135deg, #ffffff 40%, #d4a04a 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ══════════════════════════════════════════
+   LOGO STYLES
+   ══════════════════════════════════════════ */
+
+/* Generic text logo */
+.cl-logo-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* J&J */
+.cl-logo-jj {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+/* Merck */
+.cl-logo-merck {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.cl-logo-merck-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Stripe wave SVG */
+.cl-logo-svg {
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.cl-logo-svg.cl-logo-github {
+  width: 36px;
+  height: 36px;
+}
+
+.cl-logo-svg:not(.cl-logo-github) {
+  width: 60px;
+  height: 28px;
+}
+
+/* Pfizer */
+.cl-logo-pfizer {
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.cl-pfizer-mark {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* GSK */
+.cl-logo-gsk {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* AWS */
+.cl-logo-aws {
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
+/* Microsoft */
+.cl-logo-microsoft {
+  font-size: 1.0rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cl-msft-grid {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .cl-section {
+    padding: 40px 0 48px;
+  }
+
+  .cl-heading {
+    font-size: 0.7rem;
+    margin-bottom: 32px;
+  }
+
+  .cl-item {
+    padding: 0 32px;
+    height: 60px;
+  }
+
+  .cl-fade {
+    width: 60px;
+  }
+
+  .cl-track {
+    animation-duration: 20s;
+  }
+}

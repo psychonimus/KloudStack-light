@@ -1,0 +1,240 @@
+/* ─── Section ─────────────────────────────────────────────────── */
+.ft-section {
+  background-color: #f9f9f7;
+  padding: 5rem 0 4rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ft-wrapper {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ─── Tab Bar ─────────────────────────────────────────────────── */
+.ft-tabbar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #efefed;
+  border-radius: 999px;
+  padding: 0.35rem;
+  width: fit-content;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.ft-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-weight: 500;
+  color: #777;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.ft-tab--active {
+  color: #fff;
+}
+
+.ft-tab-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #C29560;
+  z-index: -1;
+  box-shadow: 0 2px 12px rgba(194, 149, 96, 0.35);
+}
+
+.ft-tab-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Panel ───────────────────────────────────────────────────── */
+.ft-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 420px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0ede8;
+}
+
+/* ─── Left: Content ───────────────────────────────────────────── */
+.ft-panel-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.ft-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ft-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  color: #111;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ft-description {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+  max-width: 380px;
+  margin: 0;
+}
+
+/* ─── CTA Button ──────────────────────────────────────────────── */
+.ft-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #C29560;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(194, 149, 96, 0.3);
+}
+
+.ft-cta:hover {
+  background: #a87d4a;
+  box-shadow: 0 6px 20px rgba(194, 149, 96, 0.4);
+}
+
+.ft-cta-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ─── Right: Image ────────────────────────────────────────────── */
+.ft-panel-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.ft-img-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.15);
+}
+
+.ft-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.ft-img-glow {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(194, 149, 96, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── Progress Dots ───────────────────────────────────────────── */
+.ft-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.ft-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.ft-dot--active {
+  background: #C29560;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .ft-panel {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+    min-height: unset;
+  }
+
+  .ft-panel-right {
+    min-height: unset;
+  }
+
+  .ft-panel-left {
+    min-height: unset;
+  }
+
+  .ft-tabbar {
+    gap: 0.15rem;
+  }
+
+  .ft-tab {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ft-tabbar {
+    border-radius: 16px;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .ft-tab {
+    justify-content: center;
+    border-radius: 12px;
+  }
+}

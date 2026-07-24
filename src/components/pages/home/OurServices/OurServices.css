@@ -1,0 +1,271 @@
+/* ══════════════════════════════════════════
+   OUR SERVICES — Bootstrap col-3 / col-9
+   ══════════════════════════════════════════ */
+
+.os-section {
+  width: 100%;
+  /* background: #0a0a0a; */
+  padding: 80px 0;
+  position: relative;
+  background: radial-gradient(134.11% 100.59% at 48.83% 10.67%, rgba(4, 18, 55, 0.65) 0%, rgb(6, 4, 10) 55%, rgb(3, 1, 1) 100%);
+}
+
+/* Remove bootstrap's default gutters from container-fluid */
+.os-container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ══════════════════════════════════════════
+   LEFT COLUMN (col-3) — Static content
+   ══════════════════════════════════════════ */
+
+.os-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 20px 10px 30px;
+}
+
+.os-eyebrow {
+  font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #d4a04a;
+  margin: 0;
+}
+
+.os-headline {
+  font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.os-body {
+  font-family: 'DM Sans', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.os-cta-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 13px 26px;
+  background: transparent;
+  border: 2px solid #d4a04a;
+  border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #d4a04a;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  width: fit-content;
+}
+
+.os-cta-btn:hover {
+  background: #d4a04a;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 160, 74, 0.35);
+}
+
+/* ══════════════════════════════════════════
+   RIGHT COLUMN (col-9) — Carousel
+   ══════════════════════════════════════════ */
+
+.os-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* Push nav buttons out slightly below */
+  padding-bottom: 8px;
+}
+
+/* Clips the scrolling track */
+.os-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Scrolling track */
+.os-track {
+  display: flex;
+  gap: 1px;
+  /* 1px divider gap between cards */
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* ── Service Card ── */
+.os-card {
+  /* width set dynamically via inline style */
+  flex-shrink: 0;
+  /* background: #111111; */
+  padding-inline: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.os-card:hover {
+  transform: translateY(-3px);
+}
+
+/* 1px vertical divider on the right of every card */
+.os-card-divider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.09);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Card image */
+.os-card-image-wrap {
+  width: 100%;
+  /* height: 280px; */
+  overflow: hidden;
+  /* background: #1a1a1a; */
+  position: relative;
+  aspect-ratio: 1/1;
+}
+
+.os-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1/1;
+  transition: transform 0.5s ease;
+  /* filter: brightness(0.82); */
+}
+
+/* .os-card:hover .os-card-img {
+  transform: scale(1.04);
+  filter: brightness(0.95);
+} */
+
+/* Card text body */
+.os-card-body {
+  padding: 24px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.os-card-title {
+  font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.os-card-desc {
+  font-family: 'DM Sans', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.48);
+  margin: 0;
+}
+
+/* ── Navigation buttons row ── */
+.os-nav-row {
+  display: flex;
+  gap: 10px;
+  padding-left: 4px;
+}
+
+.os-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease,
+    transform 0.2s ease, box-shadow 0.25s ease;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.os-nav-btn:hover {
+  border-color: #d4a04a;
+  background: rgba(212, 160, 74, 0.1);
+  color: #d4a04a;
+  transform: scale(1.1);
+  box-shadow: 0 0 16px rgba(212, 160, 74, 0.2);
+}
+
+.os-nav-btn:active {
+  transform: scale(0.94);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+@media (max-width: 992px) {
+
+  /* Stack columns on tablet */
+  .col-3,
+  .col-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .os-left {
+    padding: 40px 32px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .os-card-image-wrap {
+    height: 190px;
+  }
+}
+
+@media (max-width: 560px) {
+  .os-section {
+    padding: 60px 0;
+  }
+
+  .os-left {
+    padding: 32px 20px;
+  }
+
+  .os-card-image-wrap {
+    height: 160px;
+  }
+
+  .os-card-body {
+    padding: 18px 16px 22px;
+  }
+}

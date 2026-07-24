@@ -1,0 +1,122 @@
+/* ─── Section ─────────────────────────────────────────────────── */
+.il-section {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.il-container {
+  /* max-width: 960px;  */
+  margin: 0 4rem;
+}
+
+/* ─── Each Link Row ───────────────────────────────────────────── */
+.il-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-bottom: 1.5px solid #e5e5e5; */
+  padding: 1.5rem 0;
+  text-decoration: none;
+  color: inherit;
+  /* overflow: hidden; */
+  transition: all 0.5s ease;
+}
+
+.il-link:hover {
+  border-color: #111;
+  /* background-color: #FAFAFA; */
+  background-color: #F5F5F5;
+}
+
+/* ─── Text Block ──────────────────────────────────────────────── */
+.il-text {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.il-heading {
+  display: block;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #aaa;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  transition: color 0.4s ease;  
+  text-transform: uppercase;
+}
+
+.il-link:hover .il-heading {
+  color: #C29560;
+}
+
+.il-letter {
+  display: inline-block;
+}
+
+.il-subheading {
+  position: relative;
+  z-index: 10;
+  display: block;
+  font-size: 0.95rem;
+  color: #aaa;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.4s ease;
+  width: 50%;
+}
+
+.il-link:hover .il-subheading {
+  color: #444;
+}
+
+/* ─── Floating Image ──────────────────────────────────────────── */
+.il-img {
+  position: absolute;
+  z-index: 0;
+  width: 160px;
+  height: 96px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .il-img {
+    width: 256px;
+    height: 192px;
+  }
+}
+
+/* ─── Arrow ───────────────────────────────────────────────────── */
+.il-arrow-wrapper {
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.il-arrow {
+  padding: 0.75rem;
+}
+
+.il-arrow-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #111;
+}
+
+@media (min-width: 768px) {
+  .il-arrow-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .il-link {
+    padding: 2rem 0;
+  }
+}

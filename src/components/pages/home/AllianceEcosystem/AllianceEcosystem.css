@@ -1,0 +1,352 @@
+/* ══════════════════════════════════════════
+   VENDOR-AGNOSTIC ALLIANCE ECOSYSTEM — WHITE THEME
+   ══════════════════════════════════════════ */
+
+.ae-section {
+    width: 100%;
+    position: relative;
+    padding: 90px 0 70px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+    color: #071B34;
+    box-sizing: border-box;
+}
+
+/* Ambient glow */
+.ae-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -15%;
+    width: 55vw;
+    height: 55vw;
+    background: radial-gradient(ellipse at center, rgba(194, 149, 96, 0.05) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* ── Inner layout ── */
+.ae-inner {
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* ────────────────────────────────
+   HEADING
+   ──────────────────────────────── */
+.ae-heading-wrap {
+    margin-bottom: 44px;
+}
+
+.ae-heading {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    color: #071B34;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.ae-heading-accent {
+    color: #C29560;
+}
+
+/* ────────────────────────────────
+   ACCORDION CONTAINER
+   ──────────────────────────────── */
+.ae-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── Accordion Item ── */
+.ae-accordion-item {
+    border-radius: 16px;
+    border: 1px solid rgba(7, 27, 52, 0.08);
+    background: #fafafa;
+    overflow: hidden;
+    transition:
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        opacity 0.55s ease,
+        transform 0.55s ease;
+
+    /* Entrance */
+    opacity: 0;
+    transform: translateY(14px);
+}
+
+.ae-accordion-item--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Open state — clean white panel with soft shadow & gold accent border */
+.ae-accordion-item--open {
+    background: #ffffff;
+    border-color: rgba(194, 149, 96, 0.35);
+    box-shadow: 0 12px 40px rgba(7, 27, 52, 0.07), 0 0 0 1px rgba(194, 149, 96, 0.15);
+}
+
+/* ── Header / Trigger button ── */
+.ae-accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.ae-accordion-header:focus-visible {
+    outline: 2px solid #C29560;
+    outline-offset: -2px;
+    border-radius: 16px;
+}
+
+/* Gold left bar accent */
+.ae-accordion-bar {
+    display: block;
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #C29560 0%, #071B34 100%);
+    flex-shrink: 0;
+    transition: height 0.3s ease;
+}
+
+.ae-accordion-item--open .ae-accordion-bar {
+    height: 28px;
+}
+
+/* Category label */
+.ae-accordion-label {
+    flex: 1;
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    font-weight: 700;
+    color: #071B34;
+    letter-spacing: -0.01em;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.ae-accordion-item--open .ae-accordion-label {
+    color: #C29560;  /* golden when open */
+}
+
+/* ── Plus / Minus icon ── */
+.ae-accordion-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(7, 27, 52, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.ae-accordion-item--open .ae-accordion-icon {
+    border-color: rgba(194, 149, 96, 0.4);
+    background: rgba(194, 149, 96, 0.08);
+}
+
+.ae-icon-line {
+    position: absolute;
+    background: #071B34;
+    border-radius: 2px;
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.3s ease;
+}
+
+.ae-accordion-item--open .ae-icon-line {
+    background: #C29560;
+}
+
+.ae-icon-h {
+    width: 14px;
+    height: 2px;
+}
+
+.ae-icon-v {
+    width: 2px;
+    height: 14px;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.ae-icon-v--hidden {
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+/* ── Animated body wrapper (height transition) ── */
+.ae-accordion-body-wrap {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: height;
+}
+
+.ae-accordion-body {
+    padding: 4px 32px 32px;
+}
+
+/* ────────────────────────────────
+   LOGO GRID
+   ──────────────────────────────── */
+.ae-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+}
+
+/* Individual logo cell */
+.ae-logo-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px;
+    border-right: 1px solid rgba(7, 27, 52, 0.06);
+    border-bottom: 1px solid rgba(7, 27, 52, 0.06);
+    cursor: default;
+
+    /* Stagger-in animation */
+    opacity: 0;
+    transform: scale(0.88) translateY(8px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.25s ease,
+        filter 0.25s ease;
+}
+
+/* Remove right border on last in row */
+.ae-logo-cell:nth-child(5n) {
+    border-right: none;
+}
+
+/* Remove bottom border on last row */
+.ae-logo-cell:nth-last-child(-n+5) {
+    border-bottom: none;
+}
+
+.ae-logo-cell--visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.ae-logo-cell:hover {
+    background: rgba(194, 149, 96, 0.06);
+}
+
+/* SVG logos */
+.ae-logo-svg {
+    height: 42px;
+    width: auto;
+    max-width: 140px;
+    display: block;
+    transition: filter 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ae-logo-cell:hover .ae-logo-svg {
+    filter: drop-shadow(0 4px 12px rgba(7, 27, 52, 0.1));
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* ── Bottom divider ── */
+.ae-divider {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    padding: 0 60px;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(7, 27, 52, 0.08) 30%,
+        rgba(7, 27, 52, 0.08) 70%,
+        transparent
+    );
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .ae-inner {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ae-section {
+        padding: 60px 0 40px;
+    }
+
+    .ae-inner {
+        padding: 0 24px;
+    }
+
+    .ae-logo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ae-logo-cell:nth-child(5n) {
+        border-right: 1px solid rgba(7, 27, 52, 0.06);
+    }
+
+    .ae-logo-cell:nth-child(3n) {
+        border-right: none;
+    }
+
+    .ae-logo-cell:nth-last-child(-n+5) {
+        border-bottom: 1px solid rgba(7, 27, 52, 0.06);
+    }
+
+    .ae-logo-cell:nth-last-child(-n+3) {
+        border-bottom: none;
+    }
+
+    .ae-accordion-header {
+        padding: 20px 20px;
+    }
+
+    .ae-accordion-body {
+        padding: 4px 20px 24px;
+    }
+
+    .ae-divider {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ae-logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ae-logo-cell:nth-child(3n) {
+        border-right: 1px solid rgba(7, 27, 52, 0.06);
+    }
+
+    .ae-logo-cell:nth-child(2n) {
+        border-right: none;
+    }
+
+    .ae-logo-cell:nth-last-child(-n+3) {
+        border-bottom: 1px solid rgba(7, 27, 52, 0.06);
+    }
+
+    .ae-logo-cell:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}

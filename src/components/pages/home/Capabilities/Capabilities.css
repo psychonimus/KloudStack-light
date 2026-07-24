@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap');
+
+/* ══════════════════════════════════════════
+   CAPABILITIES & ALLIANCE ECOSYSTEM
+   ══════════════════════════════════════════ */
+
+.cap-section {
+    width: 100%;
+    /* background: #0a0a0a; */
+    padding-top: 3rem;
+    position: relative;
+    overflow: hidden;
+    /* background: radial-gradient(134.11% 100.59% at 48.83% 10.67%, #37040cd9 0%, #06040a 55%, #030101 100%); */
+}
+
+/* Subtle radial glow behind the stats */
+.cap-section::before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    right: -10%;
+    width: 55vw;
+    height: 55vw;
+    background: radial-gradient(ellipse at center, rgba(212, 160, 74, 0.07) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* ── Inner two-column layout ── */
+.cap-inner {
+    /* max-width: 1300px; */
+    margin: 0 auto;
+    padding: 0 60px;
+    
+    gap: 60px;
+    align-items: center;
+}
+
+/* ── Left column ── */
+
+
+.cap-heading {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    /* font-size: clamp(1.8rem, 2.5rem, 2.6rem); */
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    /* text-transform: uppercase; */
+    margin: 0;
+}
+
+.cap-heading-accent {
+    color: #d4a04a;
+}
+
+.cap-description {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    /* max-width: 440px; */
+}
+
+/* ── Right — stats grid ── */
+.cap-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px 24px;
+    align-items: start;
+}
+
+/* ── Individual stat card ── */
+.cap-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 0;
+    position: relative;
+}
+
+
+
+.cap-stat-number {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    line-height: 1;
+}
+
+/* The suffix (K+, %, +) sits next to the Counter output */
+.cap-stat-suffix {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    font-size: 3.625rem; /* matches Counter fontSize=58 */
+    font-weight: 500;
+    background: linear-gradient(135deg, #ffffff 40%, #d4a04a 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    margin-left: 2px;
+    align-self: center;
+    padding-bottom: 2px;
+}
+
+.cap-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.7rem, 1vw, 0.82rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.55;
+    margin: 0;
+    text-transform: none;
+}
+
+/* ── Divider ── */
+.cap-divider {
+    max-width: 1300px;
+    margin: 60px auto 0;
+    padding: 0 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.08) 30%, rgba(255, 255, 255, 0.08) 70%, transparent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+    .cap-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .cap-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cap-inner {
+        padding: 0 28px;
+    }
+
+    .cap-divider {
+        padding: 0 28px;
+    }
+
+    .cap-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 16px;
+    }
+
+    .cap-stat::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .cap-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}

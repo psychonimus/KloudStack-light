@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ══════════════════════════════════════════
+   CAPABILITIES LIGHT — White Theme
+   ══════════════════════════════════════════ */
+
+.cap-light-section {
+  width: 100%;
+  background: #fafafa;
+  padding: 90px 0 70px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  color: #071B34;
+  box-sizing: border-box;
+
+  /* Subtle background grid pattern like the image */
+  background-image: 
+    linear-gradient(rgba(7, 27, 52, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 52, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+}
+
+.cap-light-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  
+}
+
+/* ── Top Main Layout: 2 Columns ── */
+.cap-light-main {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+/* Left Column */
+.cap-light-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.cap-light-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #C29560;
+  margin-bottom: 16px;
+}
+
+.cap-light-eyebrow-star {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.cap-light-title {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #071B34;
+  margin: 0 0 15px;
+}
+
+.cap-light-title-accent {
+  display: inline-block;
+  color: #C29560;
+}
+
+.cap-light-title-arrow {
+  font-size: 0.8em;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Rating Badge Block */
+.cap-light-rating-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.cap-light-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.cap-light-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #eeebe5;
+  object-fit: cover;
+  margin-left: -12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cap-light-avatar:first-child {
+  margin-left: 0;
+}
+
+.cap-light-rating-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cap-light-rating-score-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cap-light-rating-score {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #071B34;
+  line-height: 1;
+}
+
+.cap-light-stars {
+  display: flex;
+  gap: 3px;
+  color: #ffaa00;
+  font-size: 0.9rem;
+}
+
+.cap-light-rating-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #666666;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Right Column: 2x2 Stats Grid ── */
+.cap-light-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 32px;
+  padding-top: 10px;
+}
+
+.cap-light-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cap-light-stat-value {
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  font-weight: 800;
+  color: #071B34;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.cap-light-stat-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666666;
+  margin: 0;
+}
+
+/* ── Bottom Section: Dotted Line & Logos ── */
+.cap-light-bottom {
+  border-top: 1px dashed rgba(7, 27, 52, 0.2);
+  padding-top: 40px;
+}
+
+.cap-light-logos-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cap-light-logo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(7, 27, 52, 0.45);
+  transition: color 0.25s ease, opacity 0.25s ease;
+  user-select: none;
+}
+
+.cap-light-logo-item:hover {
+  color: #071B34;
+}
+
+.cap-light-logo-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cap-light-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cap-light-title {
+    margin-bottom: 32px;
+  }
+
+  .cap-light-stats-grid {
+    gap: 32px 24px;
+  }
+
+  .cap-light-logos-row {
+    justify-content: center;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cap-light-section {
+    padding: 60px 0 50px;
+  }
+
+  .cap-light-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+  }
+
+  .cap-light-stat-value {
+    font-size: 2.5rem;
+  }
+
+  .cap-light-logos-row {
+    gap: 20px 28px;
+  }
+}

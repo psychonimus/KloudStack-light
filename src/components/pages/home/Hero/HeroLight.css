@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Wrapper ── */
+.hero-light-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+     /* padding-top: 10rem; */
+    font-family: 'Inter', sans-serif;
+    cursor: default;
+}
+
+/* ── Background image / video ── */
+.hero-light-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ── White gradient overlay — keeps light theme legible over video ── */
+.hero-light-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.60) 0%,
+            rgba(255, 255, 255, 0.45) 50%,
+            rgba(255, 255, 255, 0.72) 100%
+        ),
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.88) 0%,
+            rgba(255, 255, 255, 0.60) 40%,
+            rgba(255, 255, 255, 0.25) 70%,
+            rgba(255, 255, 255, 0.08) 100%
+        );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ── Floating light particles ── */
+.hero-light-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hero-light-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: #C29560;
+    box-shadow:
+        0 0 6px rgba(194, 149, 96, 0.7),
+        0 0 14px rgba(194, 149, 96, 0.35);
+    animation: hero-light-particle-float linear infinite;
+}
+
+@keyframes hero-light-particle-float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.20;
+    }
+    50% {
+        transform: translateY(-18px) scale(1.4);
+        opacity: 0.65;
+    }
+}
+
+/* ── Hero content ── */
+.hero-light-content {
+    position: relative;
+    z-index: 4;
+    text-align: left;
+    padding: 0 8vw;
+    width: 100%;
+    max-width: 1200px;
+    will-change: transform;
+}
+
+.hero-light-title {
+    margin: 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.0;
+    text-align: center;
+}
+
+.hero-light-title-line {
+    display: block;
+    overflow: hidden;
+    font-size: clamp(3.5rem, 6vw, 8rem);
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #071B34;
+    text-transform: uppercase;
+}
+
+/* Each split word */
+.hero-light-word {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+.hero-light-title-bold {
+    font-weight: 900;
+    color: #C29560;
+}
+
+/* Gradient on the bold line words */
+.hero-light-title-bold .hero-light-word {
+    background: linear-gradient(90deg, #071B34 10%, #C29560 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-light-subtitle {
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.2em;
+    color: rgba(30, 30, 30, 0.65);
+    text-transform: uppercase;
+    margin: 0 0 40px;
+    text-align: center;
+}
+
+/* ── CTA Buttons ── */
+.hero-light-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ── Bottom service strip ── */
+.hero-light-services {
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    align-items: stretch;
+    border-top: 1px solid rgba(7, 27, 52, 0.12);
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-light-service-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 12px;
+    font-family: -apple-system, 'SF Pro Display', 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(7, 27, 52, 0.55);
+    white-space: nowrap;
+    position: relative;
+    transition: color 0.22s ease, background 0.22s ease;
+    cursor: default;
+}
+
+/* Thin vertical divider between items */
+.hero-light-service-item + .hero-light-service-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(7, 27, 52, 0.12);
+}
+
+.hero-light-service-item:hover {
+    color: rgba(7, 27, 52, 0.90);
+    background: rgba(7, 27, 52, 0.04);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .hero-light-content {
+        padding: 0 6vw;
+        text-align: center;
+    }
+
+    .hero-light-actions {
+        justify-content: center;
+    }
+
+    .hero-light-overlay {
+        background: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Service strip: 2-column grid on mobile */
+    .hero-light-services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-light-service-item {
+        padding: 14px 8px;
+        font-size: 0.65rem;
+        letter-spacing: 0.10em;
+    }
+
+    /* Restore dividers for grid layout */
+    .hero-light-service-item + .hero-light-service-item::before {
+        display: none;
+    }
+
+    .hero-light-service-item:nth-child(odd)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 20%;
+        height: 60%;
+        width: 1px;
+        background: rgba(7, 27, 52, 0.12);
+    }
+
+    /* Top border between rows */
+    .hero-light-service-item:nth-child(n+3) {
+        border-top: 1px solid rgba(7, 27, 52, 0.08);
+    }
+}

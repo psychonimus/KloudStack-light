@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ── Section ── */
+.wks-light-section {
+    background: #ffffff;
+    width: 100%;
+    padding: 80px 6vw 72px;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ── Header row ── */
+.wks-light-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 64px;
+}
+
+.wks-light-header-left {
+    flex: 1;
+    max-width: 480px;
+}
+
+/* "CORE SERVICES ✳" label */
+.wks-light-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #e03e20;
+    margin-bottom: 14px;
+}
+
+.wks-light-label-star {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* "Our Most Valuable" */
+.wks-light-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #071B34;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* "Services ▸" */
+.wks-light-heading-accent {
+    display: block;
+    color: #C29560;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.wks-light-heading-arrow {
+    font-size: 0.75em;
+    margin-left: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Right description text */
+.wks-light-header-desc {
+    flex: 0 0 320px;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.7;
+    padding-top: 60px;         /* aligns with the heading text, below the label */
+}
+
+/* ── Cards row ── */
+.wks-light-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Individual card */
+.wks-light-card {
+    padding: 40px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    transition: background 0.25s ease;
+}
+
+/* Vertical right border on all but last */
+.wks-light-card:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.wks-light-card:hover {
+    background: rgba(0, 0, 0, 0.025);
+}
+
+/* ── Icon ── */
+.wks-light-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 28px;
+    flex-shrink: 0;
+}
+
+.wks-light-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ── Card text ── */
+.wks-light-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.wks-light-card-desc {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+}
+
+/* ── Arrow button ── */
+.wks-light-arrow-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #C29560;
+    border: none;
+    cursor: pointer;
+    margin-top: 28px;
+    flex-shrink: 0;
+    transition: background 0.22s ease, transform 0.22s ease;
+    padding: 0;
+}
+
+.wks-light-arrow-btn:hover {
+    background: #c23218;
+    transform: scale(1.1);
+}
+
+.wks-light-arrow-btn svg {
+    width: 13px;
+    height: 13px;
+    fill: #ffffff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .wks-light-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .wks-light-header-desc {
+        padding-top: 0;
+        flex: none;
+    }
+
+    .wks-light-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wks-light-card:nth-child(2) {
+        border-right: none;
+    }
+
+    .wks-light-card:nth-child(1),
+    .wks-light-card:nth-child(2) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+}
+
+@media (max-width: 560px) {
+    .wks-light-section {
+        padding: 60px 5vw 56px;
+    }
+
+    .wks-light-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .wks-light-card:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .wks-light-card {
+        padding: 32px 20px;
+    }
+}
